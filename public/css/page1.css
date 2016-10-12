@@ -1,0 +1,46 @@
+table{
+    width:100%;
+    height: auto;
+    border-color: mediumvioletred;
+    border-style: double;
+    font-color: mediumvioletred;
+    text-align: center;
+
+}
+button{
+    border-radius: 100%;
+    margin-bottom: 50px;
+    background-color: white;
+    border-color: skyblue;
+}
+button:focus{
+    outline:0;
+}
+button:hover{
+    background-color: mediumvioletred;
+    color: whitesmoke;
+}
+td{
+
+    border-style: solid;
+    color: skyblue;
+}
+
+
+.items{
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+    margin-top: 50px;
+    border-style: double;
+    border-color: mediumvioletred;
+    float: left;
+    background-color: transparent;
+    font-size: 30px;
+}
+.hey{
+    height: 350px;
+}
+#inserthere{
+    height: 700px;
+}

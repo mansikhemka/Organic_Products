@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD TO SHOP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            background-image: url("/organic-food-mailing-lists.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            z-index: -1;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 500;
+            line-height: 26.4px;
+        }
+        table{
+            width:100%;
+            height: 100%;
+            text-align: center;
+
+        }
+        td{
+            /*height: 100%;*/
+            padding: 10px;
+            /*border-style: solid;*/
+            color: snow;
+            width:420.3px;
+            background-color: black;
+            opacity: 0.77;
+            border-bottom-style: groove;
+            border-bottom-color: white;
+            font-size: 24px;
+        }
+        /*td:hover{*/
+            /*background-color: transparent;*/
+            /*border-bottom-style: hidden;*/
+            /*color: black;*/
+        /*}*/
+        .yolo{
+            height: 400px;
+        }
+        /*.mk{*/
+            /*display: flex;*/
+            /*flex-direction: row;*/
+            /*flex-flow: row;*/
+            /*flex-wrap: wrap;*/
+            /*height: 400px;*/
+
+        /*}*/
+
+      #add, input{
+
+            margin: 20px;
+          margin-left: 400px;
+            width: 400px;
+          background-color: black;
+          color: white;
+          opacity: 0.6;
+        }
+    </style>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/page2.js"></script>
+<body>
+<div class="yolo">
+<input type="text" placeholder="ENTER ITEM TO BE ADDED" id="item">
+<br>
+<br>
+<input type="text" placeholder="INPUT THE ITEM'S PRICE" id="values">
+<br>
+<br>
+
+<button id="add"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+</div>
+
+<table class="mk">
+    <tr>
+        <td>PRODUCT</td>
+        <td>PRICE</td>
+    </tr>
+
+    {{#each products}}
+    <tr>
+        <td>{{sno}}</td>
+        <td>{{price}}</td>
+    </tr>
+    {{/each}}
+
+</table>
+
+
+
+</body>
+</html>
