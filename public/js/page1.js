@@ -49,7 +49,14 @@ $(function(){
 
 
 
-
+    $('#inserthere').on('click','.cross',(ev)=> {
+        // var getr = $(this).parent().parent().attr('id');
+        var getr =ev.currentTarget.value;;                                                                     //change back
+        var cart = JSON.parse(localStorage.getItem('cart'));
+        cart.splice(getr, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        showcart();
+    })
 
 
 
@@ -76,17 +83,10 @@ $(function(){
 
 
 
-function others(){
-    $('#inserthere').on('click','.cross',(ev)=> {
-    // var getr = $(this).parent().parent().attr('id');
-    var getr =ev.currentTarget.value;;                                                                     //change back
-    var cart = JSON.parse(localStorage.getItem('cart'));
-    cart.splice(getr, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    showcart();
-})
 
-}
+
+
+
 
 
 
@@ -154,7 +154,23 @@ function showcart(){
     }
     list=list+"</table><center><p style='width: 100%;color:snow;background-color:black; opacity: 0.78; padding-top: 10px;padding-bottom: 10px;'>TOTAL AMOUNT IS "+total+"</p></center>";
     $('#inserthere').html(list);
-    others();
+
+
+
+    $.get('/itemfetch',function(data){
+        console.log(data);
+
+        var l="";
+        for(var i=0;i<data.length;i++){
+            var k;
+            k=' <div  value="'+ data[i].sno+'"> <button class="items" value="'+ data[i].sno+'"><span style="display:none">'+ data[i].id+'</span><span class="glyphicon glyphicon-leaf"></span><p>'+ data[i].sno+'</p><p>Rs'+ data[i].price+'/</p></button></div>';
+
+
+            l=l+k;
+        }
+        $('.hey').html(l);
+    })
+
 }
 
 
