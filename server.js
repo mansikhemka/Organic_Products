@@ -41,6 +41,13 @@ app.get('/showingdb',(req,res)=>{
         res.send(result);
     })
 })
+
+app.get('/itemfetch',(req,res)=>{
+    functionality.showing((result)=>{
+        console.log(result);
+        res.send(result);
+    })
+})
 app.listen(4000, ()=>{
     console.log('http://localhost:4000');
 })
